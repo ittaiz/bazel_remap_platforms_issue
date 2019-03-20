@@ -1,0 +1,5 @@
+sh_library(
+	name = "foo",
+	srcs = ["foo.sh"],
+	exec_compatible_with = ["@my_ws//platforms:large_machine"]
+)

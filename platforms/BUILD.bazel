@@ -1,0 +1,13 @@
+package(default_visibility = ["//visibility:public"])
+
+constraint_setting(name = "machine_size")
+constraint_value(name = "large_machine", constraint_setting = ":machine_size")
+constraint_value(name = "small_machine", constraint_setting = ":machine_size")
+
+platform(
+    name = "my_host_platform",
+    parents = ["@bazel_tools//platforms:host_platform"],
+    constraint_values = [
+        ":large_machine"
+    ]
+)
